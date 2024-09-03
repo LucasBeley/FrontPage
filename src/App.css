@@ -1,0 +1,137 @@
+.App {
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+}
+
+#page-container {
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+  #page-container {
+    flex-direction: column;
+  }
+}
+
+#bio {
+  flex: 1;
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+
+#separator {
+  width: 1px;
+  height: 250px;
+  background-color: lightgray;
+  flex: 0.001;
+}
+
+@media screen and (max-width: 1000px) {
+  #separator {
+    display: none;
+  }
+}
+
+#links {
+  font-size: 1.5em;
+  flex: 2;
+  width: 100%;
+
+  .in-container {
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .in-container {
+      gap: 25px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    transition: color 0.3s;
+    height: 75px;
+    color: inherit;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  @media(hover: hover) and (pointer: fine) {
+    a:hover {
+      color: white;
+      background-color: #444;
+
+      img {
+        filter: invert(1);
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.in-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .in-container {
+    padding: 25px 40px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: end;
+  padding-inline: 1rem;
+
+  p {
+    font-size: 12px;
+    margin-block: auto;
+
+    a {
+      color: inherit;
+    }
+  }
+}
