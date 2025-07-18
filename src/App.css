@@ -36,15 +36,23 @@
   }
 }
 
-#separator {
+.vertical-separator {
   width: 1px;
   height: 250px;
   background-color: lightgray;
   flex: 0.001;
 }
 
+.horizontal-separator {
+  width: 250px;
+  height: 1px;
+  background-color: lightgray;
+  flex: 0.001;
+  margin: 20px auto;
+}
+
 @media screen and (max-width: 1000px) {
-  #separator {
+  .vertical-separator {
     display: none;
   }
 }
@@ -86,6 +94,16 @@
 
     span {
       flex: 1;
+    }
+    
+    p {
+        margin: 0;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .title-desc-container {
+        flex: 1;
     }
   }
 
