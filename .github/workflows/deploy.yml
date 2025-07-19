@@ -25,9 +25,9 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
-            name: build
+            name: dist
             path: |
-                build
+              dist
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -38,8 +38,8 @@ jobs:
       - name: Download static artifacts
         uses: actions/download-artifact@v4
         with:
-            name: build
-            path: build
+            name: dist
+            path: dist
       - name: Deploy to host via FTP
         uses: milanmk/actions-file-deployer@master
         with:
@@ -48,4 +48,4 @@ jobs:
           remote-user: ${{ secrets.SSH_USER }}
           remote-password: ${{ secrets.SSH_KEY }}
           remote-path: '/var/www/frontpage/'
-          local-path: build/
+          local-path: dist/
